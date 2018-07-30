@@ -5,6 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Desafio14</title>
 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
 	 <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -31,8 +33,10 @@
   		border: 1px solid  #1a1a1a;
   	}
     
-   .fas {
+   i.fas.fa-heart {
    	color: black;
+   	width: 10px !important;
+   	height: 10px;
    }
 
 
@@ -55,6 +59,7 @@
 				<textarea id="text"></textarea>
 				<input type="submit" name="" value="crear twit">
 			</form>
+
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 			<div id="twits">
@@ -74,18 +79,33 @@
        	  	+ '<div class="like">'
        	  	+ '<ul>'
        	  	+ '<li class="icon">'
+       	  	+ '<a href="#">'
        	  	+ '<i class="fas fa-heart">'
        	  	+ '</i>'
+       	  	+ '<a/>'
        	  	+ '</li>'
-       	  	+ '<li class="delet">'
        	  	+ '</li>'
        	  	+ '<li class="cont">'
+       	  	+ '<span id="contador">'
+       	  	+  0
+       	  	+ '</span>'
+       	  	+ '<li class="delet">'
+       	  	+'<button>'
+       	  	+ 'borrar'
+            + '</button>'
        	  	+ '</li>'
-       	  	+ '</ul>'
+       	    + '</ul>'
        	  	+ '</div>'
        	  	+ '</div>')
        });
-	});
+	}); 
+   
+   var cuenta = 0;
+   $(".icon").on("click", function(){
+   	cuenta++;
+   	$("#contador").text("+", "1");
+   })
+
 </script>
 <body>
 
